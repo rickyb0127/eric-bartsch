@@ -25,7 +25,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const imgPath = new URL("../assets/project-screenshots/", import.meta.url);
+const imgPath = new URL("../assets/", import.meta.url);
 
 const projects = ref([
   {
