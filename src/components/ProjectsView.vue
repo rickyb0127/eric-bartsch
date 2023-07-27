@@ -8,7 +8,7 @@
           <div>{{ project.summary }}</div>
         </div>
         <div>
-          <img :src="`${imgPath}/${project.imgName}`"/>
+          <img :src="`${project.imgUrl}`"/>
           <!-- <div class="flex flex-row flex-wrap">
             <div class="flex mx-2 my-2 bg-bg-tag text-white rounded" v-for="tag in project.tags">
               <div class="px-1">
@@ -25,26 +25,24 @@
 <script setup>
 import { ref } from 'vue';
 
-const imgPath = new URL("../assets/", import.meta.url);
-
 const projects = ref([
   {
     id: 1,
     name: "Hangul Practice",
     summary: "Tool to practice Hangul (Korean writing) utilizing Web Speech API to access text to speech, HTML Canvas to capture user drawn image, and Google Cloud Vision API as an OCR to compare the user drawn image to the correct Korean text",
-    imgName: "hangul-practice.png"
+    imgUrl: new URL("../assets/hangul-practice.png", import.meta.url)
   },
   {
     id: 2,
     name: "Netflix Clone",
     summary: "Netflix clone using themoviedb as an api source for top movies and tv shows, built using Vue",
-    imgName: "netflix.png"
+    imgUrl: new URL("../assets/netflix.png", import.meta.url)
   },
   {
     id: 3,
     name: "Coding Practice",
     summary: "Tool created to practice algorithm problems, featuring an interactive terminal utilizing codemirror and Vue",
-    imgName: "coding-practice.png"
+    imgUrl: new URL("../assets/coding-practice.png", import.meta.url)
   },
-])
+]);
 </script>
