@@ -8,14 +8,10 @@
           <div>{{ project.summary }}</div>
         </div>
         <div>
-          <img :src="`${project.imgUrl}`"/>
-          <!-- <div class="flex flex-row flex-wrap">
-            <div class="flex mx-2 my-2 bg-bg-tag text-white rounded" v-for="tag in project.tags">
-              <div class="px-1">
-                {{ tag }}
-              </div>
-            </div>
-          </div> -->
+          <a v-if="project.url" target="_blank" :href="`${project.url}`">
+            <img :src="`${project.imgUrl}`"/>
+          </a>
+          <img v-else :src="`${project.imgUrl}`"/>
         </div>
       </div>
     </div>
@@ -28,21 +24,31 @@ import { ref } from 'vue';
 const projects = ref([
   {
     id: 1,
-    name: "Hangul Practice",
-    summary: "Tool to practice Hangul (Korean writing) utilizing Web Speech API to access text to speech, HTML Canvas to capture user drawn image, and Google Cloud Vision API as an OCR to compare the user drawn image to the correct Korean text",
-    imgUrl: new URL("../assets/hangul-practice.png", import.meta.url)
+    name: "Coding Practice",
+    summary: "Tool created to practice algorithm problems, featuring an interactive terminal utilizing codemirror and React",
+    imgUrl: new URL("../assets/coding-practice.png", import.meta.url),
+    url: "https://monumental-blancmange-86349e.netlify.app/"
   },
   {
     id: 2,
-    name: "Netflix Clone",
-    summary: "Netflix clone using themoviedb as an api source for top movies and tv shows, built using Vue",
-    imgUrl: new URL("../assets/netflix.png", import.meta.url)
+    name: "Korean Vocab",
+    summary: "Flash card-like app to learn the most common words in the Korean language. Features Korean-English toggle and speech for Korean",
+    imgUrl: new URL("../assets/korean-vocab.png", import.meta.url),
+    url: "https://soft-kulfi-47eb0f.netlify.app/"
   },
   {
     id: 3,
-    name: "Coding Practice",
-    summary: "Tool created to practice algorithm problems, featuring an interactive terminal utilizing codemirror and Vue",
-    imgUrl: new URL("../assets/coding-practice.png", import.meta.url)
+    name: "Netflix Clone",
+    summary: "Netflix clone using themoviedb as an api source for top movies and tv shows, built using Vue",
+    imgUrl: new URL("../assets/netflix.png", import.meta.url),
+    url: "https://comfy-tiramisu-474cf4.netlify.app/"
   },
+  {
+    id: 4,
+    name: "Hangul Practice",
+    summary: "Tool to practice Hangul (Korean writing) utilizing Web Speech API to access text to speech, HTML Canvas to capture user drawn image, and Google Cloud Vision API as an OCR to compare the user drawn image to the correct Korean text",
+    imgUrl: new URL("../assets/hangul-practice.png", import.meta.url),
+    url: null
+  }
 ]);
 </script>
